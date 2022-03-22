@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;700;900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Mulish', sans-serif;
+    &:focus{
+        outline: none;
+    }
+}
+
+body{
+    background: #F2F2F2;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+
+.popup-open-btn {
+    padding:16px 59px;
+    margin-right: 20px;
+    background: transparent;
+    border-radius: 6px;
+    color: #F34B8C;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid #F34B8C;
+    cursor: pointer;
+}
+
+
+.popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(#000,.5);
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.settings-popup{
+    background: #fff;
+    padding: 85px 100px;
+    border-radius: 15px;
+    width: 912px;
+    box-shadow: 0 67px 55px -34px rgba(#551A53,50%);
+    position: relative;
+    .close-popup{
+        position: absolute;
+        right: 40px;
+        top: 40px;
+        text-align: right;
+        cursor: pointer;
+        span{
+            display: block;
+            font-size: 16px;
+            color: rgba( #242E4C, .5);
+        }
+    }
+    h3{
+        font-weight: 900;
+        color: #874285;
+        font-size: 28px;
+        margin-bottom: 55px;
+    }
+    ul{
+        li{
+            .item{
+                h5{
+                    color: #874285;
+                    font-weight: 900;
+                    font-size: 20px;
+                    margin-bottom: 13px;
+                }
+                p{
+                    font-size: 16px;
+                    line-height: 22px;
+                    color: #242E4C;
+                    max-width: 503px;
+                    margin-bottom: 36px;
+                }
+            }
+            select{
+                width: 330px;
+                align-items: center;
+                height: 50px;
+                padding:0 20px;
+                appearance:none;
+                background: url(../img/Rectangle.svg) no-repeat calc(95%);
+                border: 2px solid #D8D8D8;
+                border-radius: 5px;
+                font-size: 20px;
+                color: #242E4C;
+                cursor: pointer;
+                &:hover{
+                    border-color: #9298AD;
+                    color: #9298AD;
+                }
+            }
+        }
+    }
+    hr{
+        height: 1px;
+        background: #dedede;
+        margin: 45px 0 ;
+    }
+
+    ul{
+        li{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .item{
+                h5{
+                    color: #874285;
+                    font-weight: 900;
+                    font-size: 20px;
+                    margin-bottom: 13px;
+                }
+                p{
+                    font-size: 16px;
+                    line-height: 22px;
+                    color: #242E4C;
+                    max-width: 503px;
+                    margin-bottom: 36px;
+                }
+            
+           
+            }
+            .checkbox-input{
+                .checkbox{
+                    display: block;
+                    width: 66px;
+                    height: 37px;
+                    border: 2px solid #D8DBE6;
+                    border-radius: 37px;
+                    position: relative;
+                    cursor: pointer;
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        width: 25px;
+                        height: 25px;
+                        top: 4px;
+                        left: 4px;
+                        border-radius: 50%;
+                        background: #9298AD;
+                        transition: 300ms left , 300ms background-color;
+                    }
+                }
+                input{
+                    display: none;
+                    &:checked + .checkbox{
+                        &::before{
+                            left: 34px;
+                            background: #874285;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .actions{
+        display: flex;
+        a{
+            padding:16px 59px;
+            margin-right: 20px;
+            background: #F34B8C;
+            border-radius: 6px;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            &:last-child{
+                background: #fff;
+                color: #9298AD;
+                border: 2px solid #D8DBE6;
+                &:hover{
+                    border-color: #9298AD;
+                    color: #9298AD;
+                }
+            }
+        }
+    }
+
+}
+
+input[data-popup]{
+    &:checked + .popup {
+        display: flex;
+    }
+}
